@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      color: #333;
+      text-align: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    img.profile {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px #00000033;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 2px 2px 4px #00000033;
+    }
+
+    .heart {
+      color: red;
+      font-size: 2em;
+    }
+
+    .message {
+      background: #ffffffcc;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 600px;
+      font-size: 1.2em;
+      line-height: 1.5;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px #00000022;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #e91e63;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    /* Floating hearts animation */
+    .heart-float {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 3s linear infinite;
+    }
+
+    .heart-float::before,
+    .heart-float::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart-float::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart-float::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes float {
+      0% {
+        opacity: 1;
+        transform: translateY(0) rotate(45deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-300px) rotate(45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Add Her Photo -->
+  <img class="profile" src="https://example.com/her-photo.jpg" alt="Her Photo">
+
+  <h1>Happy Birthday Aradhya ! <span class="heart">🎂❤️</span></h1>
+
+  <div class="message">
+    <p>From the day I met you, you've made everything better. You're kind, smart, and beautiful.</p>
+    <p>On this special day, I want to ask you something special...</p>
+    <h2>Will you be mine? 💌</h2>
+  </div>
+
+  <button class="button" onclick="showPopup()">Yes, I will! ❤️</button>
+
+  <footer>
+    Made with 💖 by [Navin Kr Mahato] | [15/7/25]
+  </footer>
+
+  <!-- JavaScript for popup & heart animation -->
+  <script>
+    function showPopup() {
+      alert("Yay! 🎉 Call or message me on WhatsApp: +916200828568 ❤️");
+
+      // Create floating hearts
+      for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart-float";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (2 + Math.random() * 2) + "s";
+        heart.style.background = "#" + Math.floor(Math.random()*16777215).toString(16);
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+      }
+    }
+  </script>
+</body>
+</html>
